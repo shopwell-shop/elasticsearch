@@ -5,9 +5,9 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 
 return static function (ContainerConfigurator $container): void {
     $esIndexingEnabled = filter_var(
-        EnvironmentHelper::getVariable('SHOPWARE_ES_INDEXING_ENABLED', false),
+        EnvironmentHelper::getVariable('SHOPWELL_ES_INDEXING_ENABLED', false),
         \FILTER_VALIDATE_BOOL
     );
 
-    $container->parameters()->set('shopware.product.search_keyword.indexing', !$esIndexingEnabled);
+    $container->parameters()->set('shopwell.product.search_keyword.indexing', !$esIndexingEnabled);
 };
